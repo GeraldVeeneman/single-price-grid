@@ -1,0 +1,165 @@
+/* Base */
+
+// Colours
+:root {
+
+    // Primary
+    --cyan: hsl(179, 62%, 43%);
+    --light-cyan: hsl(179, 47%, 52%);
+    --bright-yellow: hsl(71, 73%, 54%);
+
+    // Neutral
+    --light-gray: hsl(204, 43%, 93%);
+    --grayish-blue: hsl(218, 22%, 67%);
+}
+
+@mixin card-small-white-title {
+  font-size: 1.8rem;
+  color: #d2ffff;
+  margin-bottom: 2rem;
+}
+
+/* Media Query break points */
+$bp-desktop-min: 1440px; // desktop view
+
+$font-primary: 'Karla', sans-serif;
+
+/* Global reset */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%; // 1rem = 10px (10px/16px = 62.5%)
+  box-sizing: border-box;
+}
+
+/* Layout */
+body {
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;  
+  background-color: var(--light-gray); 
+    font: {
+      family: $font-primary;
+      size: 1.6rem;
+      weight:400;
+    }
+  }
+
+  .container {
+    min-width: 32.5rem;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0px 20px 50px var(--grayish-blue);
+    display: grid;
+    grid-template-columns: repeat(2, 300px);
+    grid-template-areas: "join join""sub why";
+
+    @media only screen and (max-width: 650px) {
+        grid-template-columns: 325px;
+        grid-template-areas: "join""sub""why";
+    }
+  }
+
+  
+  .card {
+    padding: 4.5rem 4rem 4rem;
+
+    h2 {
+      font-size: 1.8rem;
+      color: #d2ffff;
+      margin-bottom: 2rem;
+    }
+
+    &-join{
+      background-color: white;
+      grid-area: join;
+
+      &__title {
+          color: var(--cyan);
+          line-height: 5rem;
+          span {
+            display: block;
+            font-size: 1.8rem;
+            color:hsl(71, 73%, 54%);
+          }
+      }
+
+      &__text {
+        color: var(--grayish-blue);
+        line-height: 2.4rem;
+      }
+      
+    }
+
+    &-sub {
+      background-color: var(--cyan);
+      grid-area: sub;
+
+      &__title {
+        @include card-small-white-title();
+      }
+
+      &__price-amount {
+        font-size: 3rem;
+        font-weight: 700;
+        color: #f5ffff;
+      }
+
+      &__price-term {
+        display: inline-block;
+        margin-left: 1.5rem;
+        color: #79dbde;
+        font-size: initial;
+        font-weight: initial;
+        height: 3rem;
+        vertical-align: middle;
+      }
+
+      &__text {
+        color: #d2ffff;
+        margin: 1rem 0 3rem 0;
+      }
+
+      &__button {
+        width: 100%;
+        padding: 2rem;
+        font-size: initial;
+        color: #f5ffff;
+        background-color: var(--bright-yellow);
+        border: none;
+        border-radius: 5px;
+        box-shadow: 0px 10px 30px #218c8c;
+      }
+
+    }
+
+    &-why {
+      background-color: var(--light-cyan);
+      grid-area: why;
+
+      &__title {
+        @include card-small-white-title();
+      }
+
+      &__list {
+        list-style: none;
+        color: #abf5f6;
+        font-weight: initial;
+        font-size: 1.5rem;
+        line-height: 2rem;
+      }
+
+    }
+}
+  
