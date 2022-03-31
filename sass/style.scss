@@ -1,5 +1,3 @@
-/* Base */
-
 /* Colours */
 :root {
 
@@ -31,10 +29,13 @@ h3 {
 }
 
 
-/* Media Query break points */
-$bp-desktop-min: 1440px; // desktop view
-
+/* Fonts */
 $font-primary: 'Karla', sans-serif;
+
+
+/* Media Query break points */
+$bp-mobile-max: 700px; // max. pixels mobile view
+
 
 /* Global reset */
 * {
@@ -53,7 +54,6 @@ html {
   box-sizing: border-box;
 }
 
-/* Layout */
 body {
   width: 100vw;
   min-height: 100vh;
@@ -69,7 +69,6 @@ body {
   }
 
   .container {
-    min-width: 32.5rem;
     overflow: hidden;
     border-radius: 10px;
     box-shadow: 0px 20px 50px var(--grayish-blue);
@@ -77,7 +76,7 @@ body {
     grid-template-columns: repeat(2, 325px);
     grid-template-areas: "join join""sub why";
 
-    @media only screen and (max-width: 650px) {
+    @media only screen and (max-width: $bp-mobile-max) {
         grid-template-columns: 325px;
         grid-template-areas: "join""sub""why";
     }
