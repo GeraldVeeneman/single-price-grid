@@ -1,10 +1,28 @@
 /* Base */
+/* Colours */
 :root {
   --cyan: hsl(179, 62%, 43%);
   --light-cyan: hsl(179, 47%, 52%);
   --bright-yellow: hsl(71, 73%, 54%);
   --light-gray: hsl(204, 43%, 93%);
   --grayish-blue: hsl(218, 22%, 67%);
+}
+
+/* Typography */
+h1 {
+  font-size: 2.4rem;
+  margin-bottom: 2.4rem;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+h3 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 1.2rem;
 }
 
 /* Media Query break points */
@@ -44,7 +62,7 @@ body {
   border-radius: 10px;
   box-shadow: 0px 20px 50px var(--grayish-blue);
   display: grid;
-  grid-template-columns: repeat(2, 300px);
+  grid-template-columns: repeat(2, 325px);
   grid-template-areas: "join join" "sub why";
 }
 @media only screen and (max-width: 650px) {
@@ -57,22 +75,14 @@ body {
 .card {
   padding: 4.5rem 4rem 4rem;
 }
-.card h2 {
-  font-size: 1.8rem;
-  color: #d2ffff;
-  margin-bottom: 2rem;
-}
 .card-join {
   background-color: white;
   grid-area: join;
 }
-.card-join__title {
+.card-join__title h1 {
   color: var(--cyan);
-  line-height: 5rem;
 }
-.card-join__title span {
-  display: block;
-  font-size: 1.8rem;
+.card-join__title h3 {
   color: #c0df34;
 }
 .card-join__text {
@@ -84,9 +94,7 @@ body {
   grid-area: sub;
 }
 .card-sub__title {
-  font-size: 1.8rem;
   color: #d2ffff;
-  margin-bottom: 2rem;
 }
 .card-sub__price-amount {
   font-size: 3rem;
@@ -108,7 +116,7 @@ body {
 }
 .card-sub__button {
   width: 100%;
-  padding: 2rem;
+  padding: 1.5rem;
   font-size: initial;
   color: #f5ffff;
   background-color: var(--bright-yellow);
@@ -121,9 +129,7 @@ body {
   grid-area: why;
 }
 .card-why__title {
-  font-size: 1.8rem;
   color: #d2ffff;
-  margin-bottom: 2rem;
 }
 .card-why__list {
   list-style: none;

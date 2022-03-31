@@ -1,6 +1,6 @@
 /* Base */
 
-// Colours
+/* Colours */
 :root {
 
     // Primary
@@ -13,11 +13,23 @@
     --grayish-blue: hsl(218, 22%, 67%);
 }
 
-@mixin card-small-white-title {
-  font-size: 1.8rem;
-  color: #d2ffff;
+/* Typography */
+h1 {
+  font-size: 2.4rem;
+  margin-bottom: 2.4rem;
+}
+
+h2 {
+  font-size: 2rem;
   margin-bottom: 2rem;
 }
+
+h3 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 1.2rem;
+}
+
 
 /* Media Query break points */
 $bp-desktop-min: 1440px; // desktop view
@@ -62,7 +74,7 @@ body {
     border-radius: 10px;
     box-shadow: 0px 20px 50px var(--grayish-blue);
     display: grid;
-    grid-template-columns: repeat(2, 300px);
+    grid-template-columns: repeat(2, 325px);
     grid-template-areas: "join join""sub why";
 
     @media only screen and (max-width: 650px) {
@@ -75,24 +87,18 @@ body {
   .card {
     padding: 4.5rem 4rem 4rem;
 
-    h2 {
-      font-size: 1.8rem;
-      color: #d2ffff;
-      margin-bottom: 2rem;
-    }
-
     &-join{
       background-color: white;
       grid-area: join;
 
       &__title {
+        h1 {
           color: var(--cyan);
-          line-height: 5rem;
-          span {
-            display: block;
-            font-size: 1.8rem;
+        }
+        
+        h3 {
             color:hsl(71, 73%, 54%);
-          }
+        }
       }
 
       &__text {
@@ -107,7 +113,7 @@ body {
       grid-area: sub;
 
       &__title {
-        @include card-small-white-title();
+        color: #d2ffff;
       }
 
       &__price-amount {
@@ -133,7 +139,7 @@ body {
 
       &__button {
         width: 100%;
-        padding: 2rem;
+        padding: 1.5rem;
         font-size: initial;
         color: #f5ffff;
         background-color: var(--bright-yellow);
@@ -149,7 +155,7 @@ body {
       grid-area: why;
 
       &__title {
-        @include card-small-white-title();
+        color: #d2ffff;
       }
 
       &__list {
