@@ -74,11 +74,11 @@ body {
     box-shadow: 0px 20px 50px var(--grayish-blue);
     display: grid;
     grid-template-columns: repeat(2, 325px);
-    grid-template-areas: "join join""sub why";
+    grid-template-areas: "join join" "sub why";
 
     @media only screen and (max-width: $bp-mobile-max) {
         grid-template-columns: 325px;
-        grid-template-areas: "join""sub""why";
+        grid-template-areas: "join" "sub" "why";
     }
   }
 
